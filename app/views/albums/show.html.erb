@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
+<tbody>
+  <td><%= @album.rank %></td>
+  <td><%= @album.url %></td>
+  <td><%= @album.title %></td>
+</tbody>
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>
