@@ -10,28 +10,39 @@
       </ul>
     </div>
   <% end %>
+  <div class="columns is-mobile is-multiline">
+    <div class="field column is-12">
+      <%= form.label :rank, class: 'label' %>
+      <div class="control">
+        <div class="select">
+          <%= form.select :rank, (1..10).to_a, class: 'select' %>
+        </div>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :rank %>
-    <%= form.select :rank, (1..10).to_a %>
-  </div>
+    <div class="field column is-12">
+      <%= form.label :url, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :url, class: 'input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url %>
-  </div>
+    <div class="field column is-12">
+      <%= form.label :title, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :title, class: 'input' %>
+      </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field column is-12">
+      <%= form.label :posted_by, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :posted_by, class: 'input' %>
+      </div>
+    </div>  
 
-  <div class="field">
-    <%= form.label :posted_by %>
-    <%= form.text_field :posted_by %>
-  </div>  
-
-  <div class="actions">
-    <%= form.submit %>
+    <div class="control column ">
+      <%= form.submit 'SUBMIT', class: 'button is-primary' %>
+    </div>
   </div>
 <% end %>
