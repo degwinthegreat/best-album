@@ -1,6 +1,6 @@
 <section class="section">
-  <div class="container">
-    <h1 class="title">Albums</h1>
+  <div class="container is-mobile">
+    <h1 class="title">2019 Best Albums</h1>
     <p id="notice"><%= notice %></p>
     <table class="table is-striped is-fullwidth">
       <thead>
@@ -8,6 +8,7 @@
           <th>順位</th>
           <th>URL</th>
           <th>タイトル</th>
+          <th>アーティスト名</th>
         </tr>
       </thead>
 
@@ -15,11 +16,12 @@
         <% @albums.each do |album| %>
           <tr>
             <td><%= link_to album.rank, album_path(album) %></td>
-            <td><%= link_to album.url, album.url, target: :_blank, rel: 'noopener' %></td>
+            <td><%= link_to album.url.truncate(20), album.url, target: :_blank, rel: 'noopener' %></td>
             <td><%= link_to album.title, album_path(album) %></td>
+            <td><%= link_to album.artist_name, album_path(album) %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
-<%= link_to 'New Album', new_album_path %>
+<%= link_to '入力する', new_album_path, class: 'button is-primary' %>

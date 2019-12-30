@@ -23,21 +23,28 @@
     <div class="field column is-12">
       <%= form.label :url, class: 'label' %>
       <div class="control">
-        <%= form.text_field :url, class: 'input' %>
+        <%= form.text_field :url, class: 'input', placeholder: '例：youtube, spotify, bandcampのURLを入力してください' %>
       </div>
     </div>
 
     <div class="field column is-12">
       <%= form.label :title, class: 'label' %>
       <div class="control">
-        <%= form.text_field :title, class: 'input' %>
+        <%= form.text_field :title, class: 'input', placeholder: '例: When I Get Home' %>
+      </div>
+    </div>
+
+    <div class="field column is-12">
+      <%= form.label :artist_name, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :artist_name, class: 'input', placeholder: '例: Solange' %>
       </div>
     </div>
 
     <div class="field column is-12">
       <%= form.label :posted_by, class: 'label' %>
       <div class="control">
-        <%= form.text_field :posted_by, class: 'input' %>
+        <%= form.text_field :posted_by, class: 'input', placeholder: '例: 年間・ベス男' %>
       </div>
     </div>  
 
