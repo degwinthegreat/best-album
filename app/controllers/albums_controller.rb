@@ -6,10 +6,6 @@ class AlbumsController < ApplicationController
   def index
     @albums = Album.all.order(rank: :desc)
     @image_hash_index_by_album_id = {} 
-    @albums.each do |album|
-      @image_hash_index_by_album_id[album.id] =
-        ::LinkThumbnailer.generate(album.url).images.first.src.to_s
-    end
   end
 
   # GET /albums/1
@@ -31,6 +27,10 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
 
+    a = ::LinkThumbnailer.generate(@album.url)
+    
+    @album.image =
+      a.images.nil? ? 'https://zyosui.com/wp-content/uploads/2019/09/NO-IMAGE.jpg' : a.images.first.src.to_s
     respond_to do |format|
       if @album.save
         format.html { redirect_to root_path, notice: 'Album was successfully created.' }
