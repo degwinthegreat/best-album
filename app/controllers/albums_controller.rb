@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.all.order(rank: :desc)
     @image_hash_index_by_album_id = {} 
     @albums.each do |album|
       @image_hash_index_by_album_id[album.id] =
