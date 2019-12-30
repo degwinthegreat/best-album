@@ -2,34 +2,34 @@
   <div class="container is-mobile">
     <h1 class="title">2019 Best Albums</h1>
     <%= link_to '入力する', new_album_path, class: 'button is-primary' %>
+    <%= paginate @albums %>
     <br>
     <p id="notice"><%= notice %></p>
-      <% @albums.each do |album| %>
-        <div class="columns">
-          <div class="card column is-8 is-offset-2">
-            <header class="card-header">
-              <p class="card-header-title">
-                <%= album.rank %>位
-              </p>
-            </header>
-            <div class="card-image">
-              <figure class="image is-square">
-                <a href="<%= album.url %>" target="_blank" rel="noopener">
-                  <%= image_tag album.image %>
-                </a>
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <%= link_to album.title, album_path(album), class: 'title' %> -
-                <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
-                <br>
-                <%= album.description %>
-              </div>
+    <% @albums.each do |album| %>
+      <div class="columns">
+        <div class="card column is-8 is-offset-2">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= album.rank %>位
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-square">
+              <a href="<%= album.url %>" target="_blank" rel="noopener">
+                <%= image_tag album.image %>
+              </a>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <%= link_to album.title, album_path(album), class: 'title' %> -
+              <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
+              <br>
+              <%= album.description %>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
-</div>
+</section>
