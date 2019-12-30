@@ -1,32 +1,31 @@
 <section class="section">
   <div class="container is-mobile">
     <h1 class="title">2019 Best Albums</h1>
+    <%= link_to '入力する', new_album_path, class: 'button is-primary' %>
+    <br>
     <p id="notice"><%= notice %></p>
-    <table class="table is-striped is-fullwidth">
-      <thead>
-        <tr>
-          <th>順位</th>
-          <th>タイトル</th>
-          <th>アーティスト名</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @albums.each do |album| %>
-          <tr>
-            <td><%= link_to album.rank, album_path(album) %></td>
-            <td><%= link_to album.title, album_path(album) %></td>
-            <td><%= link_to album.artist_name, album_path(album) %></td>
+      <% @albums.each do |album| %>
+        <div class="card-header">
+          <p class="card-header-title">
+            <%= album.rank %>位
+          </p>
+        </div>
+        <div class="card-image">
+          <figure class="image">
             <% if @image_hash_index_by_album_id[album.id] %>
-              <td>
                 <a href="<%= album.url %>" target="_blank" rel="noopener">
                   <%= image_tag @image_hash_index_by_album_id[album.id] %>
                 </a>
-              </td>
             <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-<%= link_to '入力する', new_album_path, class: 'button is-primary' %>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="content">
+            <%= link_to album.title, album_path(album), class: 'title' %> -
+            <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
