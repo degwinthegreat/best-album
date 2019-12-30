@@ -5,24 +5,30 @@
     <br>
     <p id="notice"><%= notice %></p>
       <% @albums.each do |album| %>
-        <div class="card-header">
-          <p class="card-header-title">
-            <%= album.rank %>位
-          </p>
-        </div>
-        <div class="card-image">
-          <figure class="image">
-            <% if @image_hash_index_by_album_id[album.id] %>
-                <a href="<%= album.url %>" target="_blank" rel="noopener">
-                  <%= image_tag @image_hash_index_by_album_id[album.id] %>
-                </a>
-            <% end %>
-          </figure>
-        </div>
-        <div class="card-content">
-          <div class="content">
-            <%= link_to album.title, album_path(album), class: 'title' %> -
-            <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
+        <div class="columns">
+          <div class="card column is-8 is-offset-2">
+            <header class="card-header">
+              <p class="card-header-title">
+                <%= album.rank %>位
+              </p>
+            </header>
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <% if @image_hash_index_by_album_id[album.id] %>
+                    <a href="<%= album.url %>" target="_blank" rel="noopener">
+                      <%= image_tag @image_hash_index_by_album_id[album.id] %>
+                    </a>
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="content">
+                <%= link_to album.title, album_path(album), class: 'title' %> -
+                <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
+                <br>
+                <%= album.description %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>

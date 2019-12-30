@@ -23,7 +23,7 @@
     <div class="field column is-12">
       <%= form.label :url, class: 'label' %>
       <div class="control">
-        <%= form.text_field :url, class: 'input', placeholder: '例：youtube, spotify, bandcampのURLを入力してください' %>
+        <%= form.text_field :url, class: 'input', placeholder: '例：spotify, bandcampのURLを入力してください' %>
       </div>
     </div>
 
@@ -40,6 +40,14 @@
         <%= form.text_field :artist_name, class: 'input', placeholder: '例: Solange' %>
       </div>
     </div>
+
+    <div class="field column is-12">
+      <%= form.label :description, class: 'label' %>
+      <div class="control">
+        <%= form.text_field :description, class: 'input', placeholder: '例: Youtubeのリンクとか紹介したい曲があれば...' %>
+      </div>
+    </div>
+
 
     <div class="field column is-12">
       <%= form.label :posted_by, class: 'label' %>
