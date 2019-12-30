@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    @albums = Album.all.order(rank: :desc)
     @image_hash_index_by_album_id = {} 
     @albums.each do |album|
       @image_hash_index_by_album_id[album.id] =
@@ -74,6 +74,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:rank, :url, :title, :artist_name, :posted_by)
+      params.require(:album).permit(:rank, :url, :title, :artist_name, :description, :posted_by)
     end
 end
