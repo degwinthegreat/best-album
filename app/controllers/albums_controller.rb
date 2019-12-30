@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.order(rank: :desc).page(params[:page]).per(7)
+    @albums = Album.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
   end
 
   # GET /albums/1
