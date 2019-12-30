@@ -5,6 +5,11 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     @albums = Album.all
+    @image_hash_index_by_album_id = {} 
+    @albums.each do |album|
+      @image_hash_index_by_album_id[album.id] =
+        ::LinkThumbnailer.generate(album.url).images.first.src.to_s
+    end
   end
 
   # GET /albums/1
