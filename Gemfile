@@ -6,6 +6,7 @@ ruby '2.6.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 gem 'pg', group: :production
+gem 'link_thumbnailer'
 gem 'bulma-rails'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'

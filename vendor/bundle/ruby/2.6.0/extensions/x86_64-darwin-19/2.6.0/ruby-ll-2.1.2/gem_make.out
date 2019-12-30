@@ -1,0 +1,47 @@
+current directory: /Users/kawaidashinsuke/workspace/best-album-rails/vendor/bundle/ruby/2.6.0/gems/ruby-ll-2.1.2/ext/c
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/bin/ruby -I /Users/kawaidashinsuke/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20191230-67095-1nixfw3.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kawaidashinsuke/workspace/best-album-rails/vendor/bundle/ruby/2.6.0/gems/ruby-ll-2.1.2/ext/c
+make "DESTDIR=" clean
+
+current directory: /Users/kawaidashinsuke/workspace/best-album-rails/vendor/bundle/ruby/2.6.0/gems/ruby-ll-2.1.2/ext/c
+make "DESTDIR="
+compiling driver.c
+In file included from driver.c:1:
+In file included from ./driver.h:4:
+In file included from /Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby.h:33:
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2492:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)==0,"bad scan arg format","error")))
+                   ^
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2493:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)!=varc,"variable argument length doesn't match","error")))
+                   ^
+2 warnings generated.
+compiling driver_config.c
+In file included from driver_config.c:1:
+In file included from ./driver_config.h:4:
+In file included from /Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby.h:33:
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2492:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)==0,"bad scan arg format","error")))
+                   ^
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2493:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)!=varc,"variable argument length doesn't match","error")))
+                   ^
+2 warnings generated.
+compiling libll.c
+In file included from libll.c:1:
+In file included from ./libll.h:4:
+In file included from /Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby.h:33:
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2492:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)==0,"bad scan arg format","error")))
+                   ^
+/Users/kawaidashinsuke/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2493:20: warning: 'diagnose_if' is a clang extension [-Wgcc-compat]
+    __attribute__((diagnose_if(rb_scan_args_count(fmt,varc)!=varc,"variable argument length doesn't match","error")))
+                   ^
+2 warnings generated.
+linking shared-object libll.bundle
+
+current directory: /Users/kawaidashinsuke/workspace/best-album-rails/vendor/bundle/ruby/2.6.0/gems/ruby-ll-2.1.2/ext/c
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 libll.bundle ./.gem.20191230-67095-1b5zq2b
