@@ -6,10 +6,13 @@ class AlbumsController < ApplicationController
   def index
     @albums = if params[:posted_by]
       Album.where(posted_by: params[:posted_by])
+           .order(rank: :desc)
+           .order(:created_at)
+           .page(params[:page])
+           .per(10)
     else
-      Album
+      Album.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
     end
-     @albums = @albums.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
      @posters = Album.distinct(:posted_by).pluck(:posted_by)
   end
 
