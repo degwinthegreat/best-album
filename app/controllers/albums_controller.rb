@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
       Album
     end
      @albums = @albums.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
+     @posters = Album.distinct(:posted_by).pluck(:posted_by)
   end
 
   # GET /albums/1
