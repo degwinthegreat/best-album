@@ -4,7 +4,12 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
+    @albums = if params[:posted_by]
+      Album.where(posted_by: params[:posted_by])
+    else
+      Album
+    end
+     @albums = @albums.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
   end
 
   # GET /albums/1
