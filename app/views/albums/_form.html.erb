@@ -15,7 +15,7 @@
       <%= form.label :rank, class: 'label' %>
       <div class="control">
         <div class="select">
-          <%= form.select :rank, (1..10).to_a, class: 'select' %>
+          <%= form.select :rank, (1..10).to_a.reverse, class: 'select' %>
         </div>
       </div>
     </div>
