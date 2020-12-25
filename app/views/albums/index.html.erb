@@ -1,4 +1,4 @@
-<section class="section">
+<section class="section album">
   <div class="container is-mobile">
     <h1 class="title">2019 Best Albums</h1>
     <div class="buttons">
@@ -37,7 +37,6 @@
             <div class="content">
               <%= link_to album.title, album_path(album), class: 'title' %> -
               <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
-              <br>
               <%= album.description %>
             </div>
           </div>
