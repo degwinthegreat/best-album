@@ -1,0 +1,46 @@
+<section class="section album">
+  <div class="container is-mobile">
+    <h1 class="title">Best Albums</h1>
+    <div class="buttons">
+      <%= link_to '入力する', new_album_path, class: 'button is-primary' %>
+    </div>
+    <div class="buttons">
+      <%= link_to 'nohvusr', root_path(posted_by: 'nohvusr'), class: 'button is-small is-success is-light' %>
+      <%= link_to '中里', root_path(posted_by: '中里'), class: 'button is-small is-success is-light' %>
+      <%= link_to '内藤', root_path(posted_by: '内藤'), class: 'button is-small is-success is-light' %>
+      <%= link_to '本田', root_path(posted_by: '本田'), class: 'button is-small is-success is-light' %>
+      <%= link_to '高橋アフィ', root_path(posted_by: '高橋アフィ'), class: 'button is-small is-success is-light' %>
+      <%= link_to '川井田', root_path(posted_by: '川井田'), class: 'button is-small is-success is-light' %>
+      <%= link_to 'shinsuke', root_path(posted_by: 'shinsuke'), class: 'button is-small is-success is-light' %>
+      <%= link_to '絞り込み解除', root_path, class: 'button is-small is-light is-info' %>
+    </div>
+    <%= paginate @albums %>
+    <% @albums.each do |album| %>
+      <div class="columns">
+        <div class="card column is-half is-offset-one-quarter">
+          <header class="card-header">
+            <p class="card-header-title">
+              <%= album.rank %>位
+              <%= album.posted_by %>
+            </p>
+          </header>
+          <div class="card-image">
+            <figure class="image is-square">
+              <a href="<%= album.url %>" target="_blank" rel="noopener">
+                <%= image_tag album.image %>
+              </a>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <%= link_to album.title, album_path(album), class: 'title' %> -
+              <%= link_to album.artist_name, album_path(album), class: 'subtitle' %>
+              <%= album.description %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <%= paginate @albums %>
+  </div>
+</section>
