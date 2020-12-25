@@ -15,8 +15,6 @@
       <%= link_to '絞り込み解除', root_path, class: 'button is-small is-light is-info' %>
     </div>
     <%= paginate @albums %>
-    <br>
-    <p id="notice"><%= notice %></p>
     <% @albums.each do |album| %>
       <div class="columns">
         <div class="card column is-half is-offset-one-quarter">
