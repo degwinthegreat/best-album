@@ -1,0 +1,33 @@
+<div class="columns">
+  <div class="card column is-half is-offset-one-quarter">
+    <header class="card-header">
+      <p class="card-header-title">
+        <%= album.rank %>位
+        <%= album.posted_by %>
+      </p>
+    </header>
+    <div class="card-image">
+      <figure class="image is-square">
+        <a href="<%= album.url %>" target="_blank" rel="noopener">
+          <%= image_tag album.image %>
+        </a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="content">
+        <p class="title">
+          <%= album.artist_name %>
+        </p>
+        <p class="subtitle">
+          <%= album.title %>
+        <p>
+        <div class="content">
+          <%= raw Rinku.auto_link(album.description, :all, 'target="_blank"') %>
+        </div>
+      </div>
+    </div>
+    <footer class="card-footer">
+      <%= link_to 'Edit', edit_album_path(album), class: 'card-footer-item' %>
+    </footer>
+  </div>
+</div>
