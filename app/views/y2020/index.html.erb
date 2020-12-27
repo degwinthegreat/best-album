@@ -5,9 +5,9 @@
 
     <div class="buttons">
       <% @posters.each do |poster| %>
-        <%= link_to poster, albums_path(posted_by: poster), class: 'button is-small is-success is-light' %>
+        <%= link_to poster, y2020_index_path(posted_by: poster), class: 'button is-small is-success is-light' %>
       <% end %>
-      <%= link_to '絞り込み解除', albums_path, class: 'button is-small is-light is-info' %>
+      <%= link_to '絞り込み解除', y2020_index_path, class: 'button is-small is-light is-info' %>
     </div>
 
     <%= link_to 'トップに戻る', root_path %>
