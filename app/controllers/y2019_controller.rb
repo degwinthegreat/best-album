@@ -1,16 +1,16 @@
 # frozen_string_literal: true
 
-class Y2020Controller < ApplicationController
+class Y2019Controller < ApplicationController
   def index
     @albums =
       if params[:posted_by]
-        Album.y2020.where(posted_by: params[:posted_by])
+        Album.y2019.where(posted_by: params[:posted_by])
              .order(rank: :desc).order(:created_at)
              .page(params[:page]).per(10)
       else
-        Album.y2020.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
+        Album.y2019.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
       end
-    @posters = Album.y2020.distinct(:posted_by).pluck(:posted_by)
+    @posters = Album.y2019.distinct(:posted_by).pluck(:posted_by)
   end
 
   private
