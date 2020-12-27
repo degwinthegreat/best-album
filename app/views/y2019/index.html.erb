@@ -1,0 +1,21 @@
+<section class="section album">
+  <div class="container is-mobile">
+
+    <h1 class="title">2019 Best Albums</h1>
+
+    <div class="buttons">
+      <% @posters.each do |poster| %>
+        <%= link_to poster, albums_path(posted_by: poster), class: 'button is-small is-success is-light' %>
+      <% end %>
+      <%= link_to '絞り込み解除', albums_path, class: 'button is-small is-light is-info' %>
+    </div>
+
+    <%= link_to 'トップに戻る', root_path %>
+
+    <%= paginate @albums %>
+
+    <%= render partial: :album, collection: @albums %>
+
+    <%= paginate @albums %>
+  </div>
+</section>
