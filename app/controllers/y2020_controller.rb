@@ -10,7 +10,7 @@ class Y2020Controller < ApplicationController
       else
         Album.y2020.order(rank: :desc).order(:created_at).page(params[:page]).per(7)
       end
-    @posters = Album.distinct(:posted_by).pluck(:posted_by)
+    @posters = Album.y2020.distinct(:posted_by).pluck(:posted_by)
   end
 
   private
