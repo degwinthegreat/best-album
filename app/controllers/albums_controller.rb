@@ -29,7 +29,7 @@ class AlbumsController < ApplicationController
     if @album.save
       redirect_to root_path, notice: 'Album was successfully created.'
     else
-      format.html { render :new }
+      render :new
     end
   end
 
