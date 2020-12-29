@@ -22,7 +22,7 @@
           <%= album.title %>
         <p>
         <div class="content">
-          <%= raw Rinku.auto_link(album.description, :all, 'target="_blank"') %>
+          <%= simple_format(raw(Rinku.auto_link(album.description, :all, 'target="_blank"'))) %>
         </div>
       </div>
     </div>
